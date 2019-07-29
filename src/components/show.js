@@ -8,7 +8,7 @@ class Show extends Component{
             <MyContext.Consumer>
                 {(context) =>(
                   <React.Fragment>
-
+                    <div>
                     {context.state.default.map((obj) =>{
                       return(
                         <div>
@@ -18,8 +18,22 @@ class Show extends Component{
                         </div>
                       );
                     })}
+                    </div>
+                    <div>
+                    {context.state.new.map((obj) =>{
+                      return(
+                        <div>
+                          <p>{obj.nome}</p>
+                          <p>{obj.idade}</p>
+                          <p>{obj.endereco}</p>
+                        </div>
+                      );
+                    })}
+                    </div>
+
                     
                     <button onClick={context.initialValues}> Start </button>
+                    <button onClick={context.addValues}> Add Person </button>
                   </React.Fragment>
                 )}
             </MyContext.Consumer>
